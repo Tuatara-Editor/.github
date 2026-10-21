@@ -12,8 +12,7 @@ expected to:
 
 Not accepted, anywhere in the project:
 
-- harassment, insults, threats, or demeaning remarks about anyone's
-  background, identity, body or abilities;
+- harassing anyone, in whatever form a fair-minded person would see it;
 - publishing anyone's private information without their consent;
 - sexual language or imagery, and unwelcome attention of any kind;
 - repeatedly disrupting discussion, or arguing past a maintainer's decision.
