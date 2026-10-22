@@ -164,7 +164,15 @@ in the film is generated; none is a real person.
 
 ### outlook
 
-outlook opens Outlook mailboxes and messages read-only.
+outlook opens Outlook mailboxes (`.pst`, `.ost`) and messages (`.msg`,
+`.eml`) read-only. A mailbox is read by readpst shut in the sandbox, its
+messages listed by folder and narrowed as a regular expression is typed;
+a message shows its headers as sent, its times in UTC too, and what it says
+of itself, such as a Reply-To elsewhere. Attachments open from private
+copies, and messages are copied out as saved mail or Outlook items. Every
+name in the film is made up.
+
+![A made-up mailbox narrowed to one invoice: the real one from the builder for $1,250.00, a forged one from a look-alike address for $5,950.00 with replies going elsewhere, each PDF opened, and the five messages copied out as saved mail](media/outlook.gif)
 
 </details>
 
