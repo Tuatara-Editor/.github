@@ -54,6 +54,25 @@ cursor on the next line; one `u` undoes it all.
 
 ![Selecting inside brackets, a cursor on every word wrapped in quotes, lines sorted, five cursors typing, undo and redo](media/editing.gif)
 
+### Code
+
+Colouring, indentation and selection by the syntax for close to 300
+languages, by tree-sitter. Language servers start by themselves in folders
+you trust: what a name is, its definition, renaming everywhere, completion,
+and errors marked as you type; `C-c f` formats the buffer with the
+language's own tool. Lisp runs in the editor itself, with a REPL and a
+debugger.
+
+![Go formatted by gopls, a name described, its definition, selection by the syntax, a rename, completion, and an error explained](media/code.gif)
+
+### Org
+
+Org files read as Org itself reads them: folding, tables and their formulas,
+checkboxes and their counts, tasks and their states, the agenda, capture,
+clocking and tangling, and export to PDF (through LaTeX) and to Word.
+
+![An Org note folded and unfolded, its table worked out, a box ticked, a task done, and the note exported to PDF](media/org.gif)
+
 ### Git
 
 The state of a repository, after Magit: files untracked, changed and staged,
@@ -74,41 +93,11 @@ alone: owner, times, SHA-256, a photo's EXIF and GPS position, a PDF's saves.
 
 ![A photo opened safely in hex, typing refused, its SHA-256, and its metadata with the place it was taken](media/evidence.gif)
 
-From the packages, palimpsest takes a PDF apart into every save it holds:
-what each save changed, the text before and after, and every sign of editing
-examiners know, each with its evidence. Every revision opens as a PDF of its
-own, and `w` writes one out, with a log of how to find its signs again by
-hand. outlook opens Outlook mailboxes and messages read-only.
-
-![An invoice saved four times: the report of its saves, the original and the latest opened, and the second written out as a PDF of its own](media/palimpsest.gif)
-
-facematch ranks photos by how probable it is that they show the person of
-the reference photos, in the background and shut in the sandbox. Every face
-in the film is generated; none is a real person.
-
-![Two reference photos of a woman marked as masters, nine photos marked as candidates, and the ranking, the most probable first, each photo in the preview](media/facematch.gif)
+From the packages below, palimpsest takes a PDF apart into every save it
+holds, and facematch ranks photos by the person they show.
 
 <details>
-<summary><b>More: code, Org, history, documents, octets, a terminal</b></summary>
-
-### Code
-
-Colouring, indentation and selection by the syntax for close to 300
-languages, by tree-sitter. Language servers start by themselves in folders
-you trust: what a name is, its definition, renaming everywhere, completion,
-and errors marked as you type; `C-c f` formats the buffer with the
-language's own tool. Lisp runs in the editor itself, with a REPL and a
-debugger.
-
-![Go formatted by gopls, a name described, its definition, selection by the syntax, a rename, completion, and an error explained](media/code.gif)
-
-### Org
-
-Org files read as Org itself reads them: folding, tables and their formulas,
-checkboxes and their counts, tasks and their states, the agenda, capture,
-clocking and tangling, and export to PDF (through LaTeX) and to Word.
-
-![An Org note folded and unfolded, its table worked out, a box ticked, a task done, and the note exported to PDF](media/org.gif)
+<summary><b>More: history, documents, octets, a terminal</b></summary>
 
 ### History
 
@@ -148,6 +137,34 @@ mouse, links, and pictures by kitty's graphics protocol. Its whole history is
 kept as text, to search and copy like any buffer.
 
 ![A terminal in a buffer showing a git log, a script, a picture, then its history searched](media/terminal.gif)
+
+</details>
+
+<details>
+<summary><b>From the packages: palimpsest, facematch, outlook</b></summary>
+
+The packages load on asking, each for one job not everyone needs.
+
+### palimpsest
+
+palimpsest takes a PDF apart into every save it holds: what each save
+changed, the text before and after, and every sign of editing examiners
+know, each with its evidence. Every revision opens as a PDF of its own, and
+`w` writes one out, with a log of how to find its signs again by hand.
+
+![An invoice saved four times: the report of its saves, the original and the latest opened, and the second written out as a PDF of its own](media/palimpsest.gif)
+
+### facematch
+
+facematch ranks photos by how probable it is that they show the person of
+the reference photos, in the background and shut in the sandbox. Every face
+in the film is generated; none is a real person.
+
+![Two reference photos of a woman marked as masters, nine photos marked as candidates, and the ranking, the most probable first, each photo in the preview](media/facematch.gif)
+
+### outlook
+
+outlook opens Outlook mailboxes and messages read-only.
 
 </details>
 
