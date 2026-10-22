@@ -78,10 +78,15 @@ From the packages, palimpsest takes a PDF apart into every save it holds:
 what each save changed, the text before and after, and every sign of editing
 examiners know, each with its evidence. Every revision opens as a PDF of its
 own, and `w` writes one out, with a log of how to find its signs again by
-hand. outlook opens Outlook mailboxes and messages read-only, and facematch
-ranks photos by how probable it is that they show the same person.
+hand. outlook opens Outlook mailboxes and messages read-only.
 
 ![An invoice saved four times: the report of its saves, the original and the latest opened, and the second written out as a PDF of its own](media/palimpsest.gif)
+
+facematch ranks photos by how probable it is that they show the person of
+the reference photos, in the background and shut in the sandbox. Every face
+in the film is generated; none is a real person.
+
+![Two reference photos of a woman marked as masters, nine photos marked as candidates, and the ranking, the most probable first, each photo in the preview](media/facematch.gif)
 
 <details>
 <summary><b>More: code, Org, history, documents, octets, a terminal</b></summary>
