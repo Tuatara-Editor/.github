@@ -9,7 +9,7 @@ the ideas of Emacs, made to open files from anywhere safely.
 | **Org, its own** | **Code** | **Yours to change** |
 | Folding, tables, agenda, capture, export to PDF and Word, no Emacs needed. | Close to 300 languages by tree-sitter, language servers, a Lisp REPL. | Everything but a small core is Lisp; the source of anything one key away. |
 
-### Try it: version 0.90, testers wanted
+### Try it: version 0.90.1, testers wanted
 
 The [releases](https://github.com/Tuatara-Editor/tuatara/releases) have an
 AppImage that runs on Linux with nothing installed, and packages for
