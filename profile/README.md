@@ -141,7 +141,7 @@ kept as text, to search and copy like any buffer.
 </details>
 
 <details>
-<summary><b>From the packages: palimpsest, facematch, outlook</b></summary>
+<summary><b>From the packages: palimpsest, facematch, outlook, csvdt</b></summary>
 
 The packages load on asking, each for one job not everyone needs.
 
@@ -173,6 +173,16 @@ copies, and messages are copied out as saved mail or Outlook items. Every
 name in the film is made up.
 
 ![A made-up mailbox narrowed to one invoice: the real one from the builder for $1,250.00, a forged one from a look-alike address for $5,950.00 with replies going elsewhere, each PDF opened, and the five messages copied out as saved mail](media/outlook.gif)
+
+### csvdt
+
+csvdt runs [csvdt](https://github.com/YardQuit/csvdt) over a CSV buffer, a
+selection or banked lines, in the background, its output in a buffer of its
+own: timestamps of any offset put in UTC, at an offset you name or in local
+time, Unix times read as dates, and the time between events, exact in days,
+hours, minutes and seconds. The timeline in the film is made up.
+
+![A timeline whose times come in four UTC offsets: put in UTC as a column of its own, sorted into its real order, the time since each event before worked out, the times shown at New Zealand's offset, and the Unix times read as dates that agree](media/csvdt.gif)
 
 </details>
 
