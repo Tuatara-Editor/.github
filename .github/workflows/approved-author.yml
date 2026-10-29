@@ -1,0 +1,55 @@
+# Closes a pull request whose author is not an approved contributor of the
+# repository: by default a maintainer, or a member of a team given at least
+# triage on it; a repository may take fewer roles, and say why in its note.
+# When GitHub cannot be asked (an outage, a limit reached), the check fails
+# and the pull request is left open, to be run again.
+# Called from each repository's checks on pull_request_target, so it runs
+# with the base repository's token and never checks out or runs the pull
+# request's code.
+name: Approved author
+on:
+  workflow_call:
+    inputs:
+      roles:
+        description: The roles on the repository whose pull requests are taken, separated by spaces.
+        type: string
+        default: admin maintain write triage
+      note:
+        description: What the closed pull request is told.
+        type: string
+        default: >-
+          Thank you for your interest in Tuatara. Pull requests are taken from
+          approved contributors only; see CONTRIBUTING.md for how to become
+          one, or open an issue to talk about the change first.
+permissions: {}
+jobs:
+  author:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Close a pull request from someone not approved
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          AUTHOR: ${{ github.event.pull_request.user.login }}
+          NUMBER: ${{ github.event.pull_request.number }}
+          ROLES: ${{ inputs.roles }}
+          NOTE: ${{ inputs.note }}
+        run: |
+          if ! role=$(gh api "repos/$REPOSITORY/collaborators/$AUTHOR/permission" --jq .role_name 2>"$RUNNER_TEMP/gh-error"); then
+            if grep -q 'HTTP 404' "$RUNNER_TEMP/gh-error"; then
+              role=none
+            else
+              echo "::error::GitHub could not say what $AUTHOR may do in $REPOSITORY: $(cat "$RUNNER_TEMP/gh-error")"
+              exit 1
+            fi
+          fi
+          case " $ROLES " in
+            *" $role "*)
+              echo "$AUTHOR is an approved contributor ($role)." ;;
+            *)
+              gh pr close "$NUMBER" --repo "$REPOSITORY" --comment "$NOTE"
+              echo "::error::$AUTHOR is not an approved contributor of $REPOSITORY."
+              exit 1 ;;
+          esac
