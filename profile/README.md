@@ -3,6 +3,8 @@
 A text editor for the terminal and the desktop, written in Common Lisp after
 the ideas of Emacs, made to open files from anywhere safely.
 
+**[Read the manual](https://tuatara-editor.github.io/tuatara/)**
+
 | **Opens anything safely** | **Files of any size** | **Git, after Magit** |
 |---|---|---|
 | Nothing in a file is ever run; evidence opens read-only, its access time kept. | Gigabytes open at once; millions of cursors, saves in the background. | Stage the lines you select; a file or a folder as any commit left it. |
