@@ -228,6 +228,7 @@ The project's own packages, loaded on asking, each for one job not everyone need
 - [tuatara-csv-columns](https://github.com/Tuatara-Editor/tuatara-csv-columns): the columns of every record of a CSV or TSV file rearranged as awk's print does
 - [tuatara-caldav](https://github.com/Tuatara-Editor/tuatara-caldav): your agenda shared with GNOME Calendar, Thunderbird and phones through a CalDAV server
 - [tuatara-csvdt](https://github.com/Tuatara-Editor/tuatara-csvdt): csvdt, which converts the timestamps and durations of CSV records, run over a buffer
+- [tuatara-themes](https://github.com/Tuatara-Editor/tuatara-themes): popular colour themes, dark and light versions of palettes you may know from other editors (Catppuccin, Dracula, Nord, One Dark, Solarized, Tokyo Night), offered by `M-x load-theme`
 
 A package is loaded by a line in Tuatara's init file (`~/.config/tuatara/init.lisp`), its settings after `:config`, as its README shows:
 
