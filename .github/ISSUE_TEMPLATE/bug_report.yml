@@ -1,0 +1,41 @@
+name: Something does not work
+description: Tuatara does something it should not, or fails to do what it says.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what Tuatara did, and what you expected it to do.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: How to make it happen again
+      description: The keys or commands, from starting Tuatara, and a small file if one is needed. Never attach a file you are not free to share.
+      placeholder: |
+        1. tuatara --gui notes.org
+        2. C-s kea RET
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: What `tuatara --version` prints.
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: System
+      description: The system and how Tuatara was installed (AppImage, Fedora, Ubuntu or Arch package, from the sources), and the terminal or the window.
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: The debug log
+      description: The lines of `~/.cache/tuatara/debug.log` from around the failure. Look through them first and leave out anything private (file names, text).
+      render: text

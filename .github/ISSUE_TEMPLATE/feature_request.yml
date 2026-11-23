@@ -1,0 +1,21 @@
+name: An idea
+description: Something Tuatara could do, or do better.
+labels: [idea]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: What you want to do
+      description: The task, in your own words, and how you do it today.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: How Tuatara could help
+      description: The command, key or setting you have in mind, if any.
+  - type: textarea
+    id: elsewhere
+    attributes:
+      label: Done elsewhere
+      description: Another program that does it well, and what is good about how it does it.

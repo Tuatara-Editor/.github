@@ -1,0 +1,30 @@
+# Fails when a commit of the pull request has no "Signed-off-by:" line with
+# its author's name and address, the author's statement that they may give
+# the change under the project's licence (the Developer Certificate of
+# Origin, https://developercertificate.org/). git commit -s writes it.
+name: Sign-off
+on:
+  workflow_call:
+permissions: {}
+jobs:
+  sign-off:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+    steps:
+      - name: Every commit signed off by its author
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          missing=$(gh api --paginate "repos/$REPOSITORY/pulls/$NUMBER/commits" --jq '
+            .[] | . as $c
+            | select($c.commit.message | contains("Signed-off-by: \($c.commit.author.name) <\($c.commit.author.email)>") | not)
+            | "\($c.sha[0:7]) \($c.commit.message | split("\n")[0])"')
+          if [ -n "$missing" ]; then
+            echo "::error::Commits without their author's sign-off (git commit -s, or git rebase --signoff):"
+            echo "$missing"
+            exit 1
+          fi
+          echo "Every commit is signed off by its author."
